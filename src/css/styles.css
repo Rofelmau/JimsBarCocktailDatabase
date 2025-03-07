@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background: #35424a;
+    background: #68aad3;
     color: #ffffff;
     padding: 10px 0;
     text-align: center;
@@ -37,11 +37,46 @@ nav a:hover {
 }
 
 footer {
-    background: #35424a;
+    background: #68aad3;
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+.tabs {
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+
+.tab.active {
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.tab-content {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+#add-row-button, .delete-row-button {
+    height: 30px;
+    width: 30px;
 }

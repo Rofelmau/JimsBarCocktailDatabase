@@ -25,6 +25,19 @@ function checkForDuplicateIds(data) {
     return ingredientIds.length !== uniqueIds.size;
 }
 
+function checkIngredientsExist(data) {
+    const ingredientIds = data.ingredients.map(ingredient => ingredient.id);
+    const missingIngredients = [];
+    data.cocktails.forEach(cocktail => {
+        cocktail.ingredients.forEach(ing => {
+            if (!ingredientIds.includes(ing.ingredientId)) {
+                missingIngredients.push({ cocktail: cocktail.name, ingredientId: ing.ingredientId });
+            }
+        });
+    });
+    return missingIngredients;
+}
+
 const data = loadJSON('src/data/cocktails.json');
 
 try {
@@ -40,7 +53,13 @@ try {
         process.exit(1);
     }
 
-    console.log('No duplicate ingredients or IDs found.');
+    const missingIngredients = checkIngredientsExist(data);
+    if (missingIngredients.length > 0) {
+        console.error('Missing ingredients found:', missingIngredients);
+        process.exit(1);
+    }
+
+    console.log('No duplicate ingredients, IDs, or missing ingredients found.');
     process.exit(0);
 } catch (error) {
     console.error('Error validating data:', error);
