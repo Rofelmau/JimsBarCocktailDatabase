@@ -1,0 +1,11 @@
+{
+  "name": "jims-bar-cocktail-database",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "validate": "node src/js/validateData.js"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}

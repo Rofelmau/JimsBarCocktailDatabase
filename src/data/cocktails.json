@@ -1,0 +1,59 @@
+{
+    "ingredients": [
+        { "id": 1, "name": "Limette" },
+        { "id": 2, "name": "Gingerale" },
+        { "id": 3, "name": "Lime Juice" },
+        { "id": 4, "name": "Rohrzucker" },
+        { "id": 5, "name": "Ananassaft" },
+        { "id": 6, "name": "Kokossirup" },
+        { "id": 7, "name": "Sahne" },
+        { "id": 8, "name": "Mangosirup" },
+        { "id": 9, "name": "Blue Curacao" },
+        { "id": 11, "name": "Orangensaft" },
+        { "id": 12, "name": "Maracujasaft" },
+        { "id": 13, "name": "Orangen" },
+        { "id": 14, "name": "Cranberrysaft" }
+    ],
+    "cocktails": [
+        {
+            "name": "Ipanema",
+            "ingredients": [
+                { "ingredientId": 1, "quantity": 1, "unit": "st" },
+                { "ingredientId": 2, "quantity": 100, "unit": "ml" },
+                { "ingredientId": 3, "quantity": 20, "unit": "ml" },
+                { "ingredientId": 4, "quantity": 1.5, "unit": "BL" }
+            ],
+            "instructions": "TBD."
+        },
+        {
+            "name": "Virgin Colada",
+            "ingredients": [
+                { "ingredientId": 5, "quantity": 180, "unit": "ml" },
+                { "ingredientId": 6, "quantity": 40, "unit": "ml" },
+                { "ingredientId": 7, "quantity": 30, "unit": "ml" }
+            ],
+            "instructions": "TBD."
+        },
+        {
+            "name": "Blue Lagoon",
+            "ingredients": [
+                { "ingredientId": 8, "quantity": 40, "unit": "ml" },
+                { "ingredientId": 9, "quantity": 20, "unit": "ml" },
+                { "ingredientId": 3, "quantity": 30, "unit": "ml" },
+                { "ingredientId": 11, "quantity": 90, "unit": "ml" },
+                { "ingredientId": 12, "quantity": 90, "unit": "ml" }
+            ],
+            "instructions": "TBD."
+        },
+        {
+            "name": "Ev. Jugend Spezial",
+            "ingredients": [
+                { "ingredientId": 13, "quantity": 0.5, "unit": "st" },
+                { "ingredientId": 3, "quantity": 20, "unit": "ml" },
+                { "ingredientId": 14, "quantity": 100, "unit": "ml" },
+                { "ingredientId": 4, "quantity": 1.5, "unit": "BL" }
+            ],
+            "instructions": "TBD."
+        }
+    ]
+}
