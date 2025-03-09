@@ -12,9 +12,44 @@
         { "id": 11, "name": "Orangensaft", "unit": "ml"},
         { "id": 12, "name": "Maracujasaft", "unit": "ml"},
         { "id": 13, "name": "Orangen", "unit": "st"},
-        { "id": 14, "name": "Cranberrysaft", "unit": "ml"}
+        { "id": 14, "name": "Cranberrysaft", "unit": "ml"},
+        { "id": 15, "name": "Pfirsichsirup", "unit": "ml"},
+        { "id": 16, "name": "Grenadinesirup", "unit": "ml"},
+        { "id": 17, "name": "Zitronensaft", "unit": "ml"},
+        { "id": 18, "name": "Holunderblütensirup", "unit": "ml"},
+        { "id": 19, "name": "Erdbeersaft", "unit": "ml"},
+        { "id": 20, "name": "Mineralwasser", "unit": "ml"}
     ],
     "cocktails": [
+        {
+            "name": "Strawberry Virgin",
+            "ingredients": [
+                { "ingredientId": 6, "quantity": 20},
+                { "ingredientId": 7, "quantity": 60},
+                { "ingredientId": 19, "quantity": 170}
+            ],
+            "instructions": "TBD."
+        },
+        {
+            "name": "Erdbeer Mosquito",
+            "ingredients": [
+                { "ingredientId": 1, "quantity": 1},
+                { "ingredientId": 18, "quantity": 20},
+                { "ingredientId": 19, "quantity": 100},
+                { "ingredientId": 20, "quantity": 50}
+            ],
+            "instructions": "TBD."
+        },
+        {
+            "name": "Viva",
+            "ingredients": [
+                { "ingredientId": 15, "quantity": 40},
+                { "ingredientId": 16, "quantity": 20},
+                { "ingredientId": 12, "quantity": 190},
+                { "ingredientId": 17, "quantity": 10}
+            ],
+            "instructions": "TBD."
+        },
         {
             "name": "Ipanema",
             "ingredients": [
