@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Load initial content
-    loadTabContent('calculator');
+    loadTabContent('overview');
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
