@@ -1,4 +1,6 @@
-var selectedCocktails = new Set();
+if (!window.selectedCocktails) {
+    window.selectedCocktails = new Set();
+}
 
 function displayCocktails(cocktails) {
     const grid = document.getElementById('cocktail-grid');
@@ -76,7 +78,7 @@ function exportSelectedCocktailsToPDF() {
         let ingredientYPosition = yPosition + 30;
         ingredientsList.forEach(ingredient => {
             doc.text(`- ${ingredient}`, xPosition + 5, ingredientYPosition);
-        ingredientYPosition += 10;
+            ingredientYPosition += 10;
         });
 
         colCount++;
