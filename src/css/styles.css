@@ -75,3 +75,9 @@ footer {
 .tab-content.active {
     display: block;
 }
+
+#tab-content {
+    max-width: 1200px; /* Setze die maximale Breite */
+    margin: 0 auto; /* Zentriere den Inhalt */
+    padding: 20px; /* Optional: füge etwas Innenabstand hinzu */
+}
