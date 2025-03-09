@@ -1,3 +1,18 @@
+let cocktailsData = [];
+let ingredientData = [];
+
+function loadCocktails() {
+    fetch('data/cocktails.json')
+        .then(response => response.json())
+        .then(data => {
+            cocktailsData = data.cocktails;
+            ingredientData = data.ingredients;
+            cocktailsData.sort((a, b) => a.name.localeCompare(b.name));
+            displayCocktails(cocktailsData);
+        })
+        .catch(error => console.error('Error loading cocktails:', error));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.tab');
     const tabContent = document.getElementById('tab-content');
