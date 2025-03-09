@@ -75,8 +75,3 @@ footer {
 .tab-content.active {
     display: block;
 }
-
-#add-row-button, .delete-row-button {
-    height: 30px;
-    width: 30px;
-}

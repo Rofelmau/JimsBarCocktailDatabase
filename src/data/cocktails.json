@@ -1,57 +1,57 @@
 {
     "ingredients": [
-        { "id": 1, "name": "Limette" },
-        { "id": 2, "name": "Gingerale" },
-        { "id": 3, "name": "Lime Juice" },
-        { "id": 4, "name": "Rohrzucker" },
-        { "id": 5, "name": "Ananassaft" },
-        { "id": 6, "name": "Kokossirup" },
-        { "id": 7, "name": "Sahne" },
-        { "id": 8, "name": "Mangosirup" },
-        { "id": 9, "name": "Blue Curacao" },
-        { "id": 11, "name": "Orangensaft" },
-        { "id": 12, "name": "Maracujasaft" },
-        { "id": 13, "name": "Orangen" },
-        { "id": 14, "name": "Cranberrysaft" }
+        { "id": 1, "name": "Limette", "unit": "BL"},
+        { "id": 2, "name": "Gingerale", "unit": "ml"},
+        { "id": 3, "name": "Lime Juice", "unit": "ml"},
+        { "id": 4, "name": "Rohrzucker", "unit": "st"},
+        { "id": 5, "name": "Ananassaft", "unit": "ml"},
+        { "id": 6, "name": "Kokossirup", "unit": "ml"},
+        { "id": 7, "name": "Sahne", "unit": "ml"},
+        { "id": 8, "name": "Mangosirup", "unit": "ml"},
+        { "id": 9, "name": "Blue Curacao", "unit": "ml"},
+        { "id": 11, "name": "Orangensaft", "unit": "ml"},
+        { "id": 12, "name": "Maracujasaft", "unit": "ml"},
+        { "id": 13, "name": "Orangen", "unit": "st"},
+        { "id": 14, "name": "Cranberrysaft", "unit": "ml"}
     ],
     "cocktails": [
         {
             "name": "Ipanema",
             "ingredients": [
-                { "ingredientId": 1, "quantity": 1, "unit": "st" },
-                { "ingredientId": 2, "quantity": 100, "unit": "ml" },
-                { "ingredientId": 3, "quantity": 20, "unit": "ml" },
-                { "ingredientId": 4, "quantity": 1.5, "unit": "BL" }
+                { "ingredientId": 1, "quantity": 1},
+                { "ingredientId": 2, "quantity": 100},
+                { "ingredientId": 3, "quantity": 20},
+                { "ingredientId": 4, "quantity": 1.5}
             ],
             "instructions": "TBD."
         },
         {
             "name": "Virgin Colada",
             "ingredients": [
-                { "ingredientId": 5, "quantity": 180, "unit": "ml" },
-                { "ingredientId": 6, "quantity": 40, "unit": "ml" },
-                { "ingredientId": 7, "quantity": 30, "unit": "ml" }
+                { "ingredientId": 5, "quantity": 180},
+                { "ingredientId": 6, "quantity": 40},
+                { "ingredientId": 7, "quantity": 30}
             ],
             "instructions": "TBD."
         },
         {
             "name": "Blue Lagoon",
             "ingredients": [
-                { "ingredientId": 8, "quantity": 40, "unit": "ml" },
-                { "ingredientId": 9, "quantity": 20, "unit": "ml" },
-                { "ingredientId": 3, "quantity": 30, "unit": "ml" },
-                { "ingredientId": 11, "quantity": 90, "unit": "ml" },
-                { "ingredientId": 12, "quantity": 90, "unit": "ml" }
+                { "ingredientId": 8, "quantity": 40},
+                { "ingredientId": 9, "quantity": 20},
+                { "ingredientId": 3, "quantity": 30},
+                { "ingredientId": 11, "quantity": 90},
+                { "ingredientId": 12, "quantity": 90}
             ],
             "instructions": "TBD."
         },
         {
             "name": "Ev. Jugend Spezial",
             "ingredients": [
-                { "ingredientId": 13, "quantity": 0.5, "unit": "st" },
-                { "ingredientId": 3, "quantity": 20, "unit": "ml" },
-                { "ingredientId": 14, "quantity": 100, "unit": "ml" },
-                { "ingredientId": 4, "quantity": 1.5, "unit": "BL" }
+                { "ingredientId": 13, "quantity": 0.5},
+                { "ingredientId": 3, "quantity": 20},
+                { "ingredientId": 14, "quantity": 100},
+                { "ingredientId": 4, "quantity": 1.5}
             ],
             "instructions": "TBD."
         }

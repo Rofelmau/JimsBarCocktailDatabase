@@ -3,6 +3,7 @@ if (!window.calculatorInitialized) {
 
     let cocktailsData = [];
     let ingredientsMap = new Map();
+    let unitMap = new Map();
 
     function populateCocktailDropdown() {
         fetch('data/cocktails.json')
@@ -11,6 +12,7 @@ if (!window.calculatorInitialized) {
                 cocktailsData = data.cocktails;
                 data.ingredients.forEach(ingredient => {
                     ingredientsMap.set(ingredient.id, ingredient.name);
+                    unitMap.set(ingredient.id, ingredient.unit);
                 });
                 const selects = document.querySelectorAll('.cocktail-select');
                 selects.forEach(select => {
@@ -50,7 +52,7 @@ if (!window.calculatorInitialized) {
 
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('delete-row-button');
-        deleteButton.textContent = '-';
+        deleteButton.innerHTML = '<i class="fas fa-minus"></i>';
         deleteButton.addEventListener('click', (event) => {
             const row = event.target.closest('tr');
             row.parentNode.removeChild(row);
@@ -102,18 +104,48 @@ if (!window.calculatorInitialized) {
         shoppingList.forEach((quantity, id) => {
             const listItem = document.createElement('li');
             const name = ingredientsMap.get(id);
-            listItem.textContent = `${name}: ${quantity}`;
+            const unit = unitMap.get(id);
+            listItem.textContent = `${name}: ${quantity} ${unit}`;
             shoppingListElement.appendChild(listItem);
         });
+
+        // Show or hide the shopping list based on whether it has items
+        const shoppingListContainer = document.getElementById('shopping-list');
+        if (shoppingList.size > 0) {
+            shoppingListContainer.classList.add('visible');
+        } else {
+            shoppingListContainer.classList.remove('visible');
+        }
     }
 
     // Initial population of the dropdown and shopping list
     populateCocktailDropdown();
-    
+
+    // Copy to clipboard functionality
+    document.getElementById('copy-button').addEventListener('click', () => {
+        const shoppingListElement = document.getElementById('shopping-list-items');
+        const items = shoppingListElement.querySelectorAll('li');
+        const textToCopy = Array.from(items).map(item => item.textContent).join('\n');
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            alert('Einkaufsliste kopiert!');
+        }).catch(err => {
+            console.error('Fehler beim Kopieren der Einkaufsliste:', err);
+        });
+    });
+
+    // Export as PDF functionality
+    document.getElementById('export-pdf-button').addEventListener('click', () => {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        const shoppingListElement = document.getElementById('shopping-list-items');
+        const items = shoppingListElement.querySelectorAll('li');
+        const textToExport = Array.from(items).map(item => item.textContent).join('\n');
+        doc.text(textToExport, 10, 10);
+        doc.save('Einkaufsliste.pdf');
+    });
 }
 
 createNewRow();
-
 document.getElementById('add-row-button').addEventListener('click', () => {
     createNewRow();
 });
