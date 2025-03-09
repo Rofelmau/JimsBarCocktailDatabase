@@ -85,10 +85,13 @@ function updateShoppingList() {
 
     const shoppingListElement = document.getElementById('shopping-list-items');
     shoppingListElement.innerHTML = '';
+
     shoppingList.forEach((quantity, id) => {
         const listItem = document.createElement('li');
-        const name = ingredientData[id].name;
-        const unit = ingredientData[id].unit;
+        const ingredient = ingredientData.find(ingredient => ingredient.id === id);
+
+        const name = ingredient.name;
+        const unit = ingredient.unit;
         listItem.textContent = `${name}: ${quantity} ${unit}`;
         shoppingListElement.appendChild(listItem);
     });
