@@ -77,7 +77,21 @@ footer {
 }
 
 #tab-content {
-    max-width: 1200px; /* Setze die maximale Breite */
-    margin: 0 auto; /* Zentriere den Inhalt */
-    padding: 20px; /* Optional: füge etwas Innenabstand hinzu */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+select {
+    min-width: 200px;
+    height: 40px;
+    font-size: 16px;
+    padding: 10px;
+}
+
+input {
+    height: 40px;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
 }

@@ -23,13 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.text())
             .then(data => {
                 tabContent.innerHTML = data;
+                const script = document.createElement('script');
                 if (tabName === 'calculator') {
-                    const script = document.createElement('script');
                     script.src = 'js/calculator.js';
-                    document.body.appendChild(script);
                 } else if (tabName === 'overview') {
-                    const script = document.createElement('script');
                     script.src = 'js/overview.js';
+                } else if (tabName === 'by-ingredients') {
+                    script.src = 'js/by-ingredients.js';
+                }
+                if (!document.body.contains(script)) {
                     document.body.appendChild(script);
                 }
             })
