@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const script = document.createElement('script');
                     script.src = 'js/calculator.js';
                     document.body.appendChild(script);
+                } else if (tabName === 'overview') {
+                    const script = document.createElement('script');
+                    script.src = 'js/overview.js';
+                    document.body.appendChild(script);
                 }
             })
             .catch(error => console.error('Error loading tab content:', error));
