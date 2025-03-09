@@ -1,9 +1,9 @@
 {
     "ingredients": [
-        { "id": 1, "name": "Limette", "unit": "BL"},
+        { "id": 1, "name": "Limette", "unit": "st"},
         { "id": 2, "name": "Gingerale", "unit": "ml"},
         { "id": 3, "name": "Lime Juice", "unit": "ml"},
-        { "id": 4, "name": "Rohrzucker", "unit": "st"},
+        { "id": 4, "name": "Rohrzucker", "unit": "BL"},
         { "id": 5, "name": "Ananassaft", "unit": "ml"},
         { "id": 6, "name": "Kokossirup", "unit": "ml"},
         { "id": 7, "name": "Sahne", "unit": "ml"},
