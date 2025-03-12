@@ -1,0 +1,23 @@
+#shopping-list {
+    display: none;
+}
+
+#shopping-list.visible {
+    display: block;
+}
+
+#shopping-list-header {
+    display: flex;
+    align-items: center;
+}
+
+#shopping-list-header h3 {
+    margin-right: 10px;
+}
+
+button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    height: 40px;
+    width: 40px;
+}

@@ -1,0 +1,9 @@
+#ingredient-selection-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#ingredient-select {
+    margin-left: 10px;
+}

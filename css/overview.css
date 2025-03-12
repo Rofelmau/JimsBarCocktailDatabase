@@ -1,0 +1,45 @@
+#filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#search-field {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#export-pdf-button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#cocktail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.cocktail-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.cocktail-item.selected {
+    background-color: #d1e7dd;
+    border-color: #0f5132;
+}
+
+.cocktail-item ul {
+    padding-left: 20px;
+}
+
+.cocktail-item ul li {
+    list-style-type: disc;
+}
