@@ -9,11 +9,9 @@ function populateCocktailDropdown() {
             select.appendChild(option);
         });
     });
-
-    updateShoppingList(); // Initial call to update the shopping list
 }
 
-function createNewRow() {
+function createNewRow(cocktailName = '', quantity = 0) {
     const table = document.getElementById('cocktail-table').getElementsByTagName('tbody')[0];
     const newRow = table.insertRow(table.rows.length - 1); // Insert before the last row (add-row)
     const newCell1 = newRow.insertCell(0);
@@ -30,7 +28,7 @@ function createNewRow() {
     newInput.classList.add('cocktail-quantity');
     newInput.min = '0';
     newInput.max = '999';
-    newInput.value = '0';
+    newInput.value = quantity;
     newInput.addEventListener('input', updateShoppingList);
     newCell2.appendChild(newInput);
 
@@ -46,6 +44,38 @@ function createNewRow() {
     newCell3.appendChild(deleteButton);
 
     populateCocktailDropdown();
+    updateShoppingList();
+    newSelect.value = cocktailName;
+}
+
+function saveSettings() {
+    const table = document.getElementById('cocktail-table').getElementsByTagName('tbody')[0];
+    const rows = table.getElementsByTagName('tr');
+    const settings = [];
+
+    for (let i = 0; i < rows.length - 1; i++) { // Exclude the last row (add-row)
+        const select = rows[i].querySelector('.cocktail-select');
+        const quantityInput = rows[i].querySelector('.cocktail-quantity');
+        settings.push({
+            cocktailName: select.value,
+            quantity: quantityInput.value
+        });
+    }
+
+    localStorage.setItem('cocktailSettings', JSON.stringify(settings));
+}
+
+function loadSettings() {
+    const settings = JSON.parse(localStorage.getItem('cocktailSettings'));
+    console.log(settings);
+    if (settings.length > 0) {
+
+        settings.forEach(setting => {
+            createNewRow(setting.cocktailName, setting.quantity);
+        });
+    } else {
+        createNewRow();
+    }
 }
 
 document.querySelectorAll('.delete-row-button').forEach(button => {
@@ -103,10 +133,13 @@ function updateShoppingList() {
     } else {
         shoppingListContainer.classList.remove('visible');
     }
+
+    saveSettings();
 }
 
 // Initial population of the dropdown and shopping list
 populateCocktailDropdown();
+loadSettings();
 
 // Copy to clipboard functionality
 document.getElementById('copy-button').addEventListener('click', () => {
@@ -131,7 +164,6 @@ document.getElementById('export-pdf-button').addEventListener('click', () => {
     doc.save('Einkaufsliste.pdf');
 });
 
-createNewRow();
 document.getElementById('add-row-button').addEventListener('click', () => {
     createNewRow();
 });
